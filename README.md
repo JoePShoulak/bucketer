@@ -48,5 +48,5 @@ There are three items the Bucketer can produce: Lava Buckets, Water Buckets, and
 
 Two more sub-devices must be created to make use of the Lava Bucket Farm in a meaningful way. 
 
-An Item filter on the output of a nearby Auto-Furnace, separating Empty Buckets from all other outputs (send these to your Bucker Input Hopper)
+An Item filter on the output of a nearby Auto-Furnace, separating Empty Buckets from all other outputs (send these to your Bucker Input Hopper)  
 An Item Elevator to return the Lava Buckets to the Furnace, made with either Water or Droppers (send these to your Furnace Side Input)
