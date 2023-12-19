@@ -28,7 +28,7 @@ Two sets of checks must pass for the Bucketer to produce a Bucketed Liquid. If a
 
 ### Input Rules
 
-* *Liquid**: There must be a Cauldron immediately above the Bucketer which is full (fill_level of 6)
+* **Liquid**: There must be a Cauldron immediately above the Bucketer which is full (fill_level of 6)
 * **Buckets**: There must be a Hopper pointing toward any side of the Bucketer _except the Face Side_, and that Hopper must contain at least one Bucket.
 
 If both of the Input Rules are met, the Bucketer will continue to the Output Rules (this is not when we consume those input resources).
