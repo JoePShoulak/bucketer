@@ -37,10 +37,10 @@ If both of the Input Rules are met, the Bucketer will continue to the Output Rul
 
 There are four Output Modes: **Hopper**, **Furnace**, **Chest**, and **Dispense**.
 
-**Hopper Mode**: If there is a Hopper beneath the Bucketer, the Bucketer will be in Hopper Mode. If the Hopper has room, a Bucketed Liquid will be outputted to the Hopper.   
-**Furnace Mode**: If there is a Furnace (...or Blast Furnace, or Smoker) in front of the Bucketer, the Bucketer will be in Furnace Mode. If the Hopper has room, _and the Bucketed Liquid is Lava_, a Bucketed Liquid will be outputted to the Hop.  
-**Chest Mode**: If there is a Chest (...or Barrel, Hopper, or Shulker Chest) in front of the Bucketer, the Bucketer will be in Chest Mode. If the Chest has room, a Bucketed Liquid will be outputted to the Hop.  
-**Dispense Mode**: If there is no container below or in front of the Bucketer, but there is Air or Water in front of the Bucketer, it will be in Dispense Mode and will spawn the Bucketed Liquid into the space in front of it. It will not dispense the Bucketed Liquid into Lava (although maybe it should).
+* **Hopper Mode**: If there is a Hopper beneath the Bucketer, the Bucketer will be in Hopper Mode. If the Hopper has room, a Bucketed Liquid will be outputted to the Hopper.   
+* **Furnace Mode**: If there is a Furnace (...or Blast Furnace, or Smoker) in front of the Bucketer, the Bucketer will be in Furnace Mode. If the Hopper has room, _and the Bucketed Liquid is Lava_, a Bucketed Liquid will be outputted to the Hop.  
+* **Chest Mode**: If there is a Chest (...or Barrel, Hopper, or Shulker Chest) in front of the Bucketer, the Bucketer will be in Chest Mode. If the Chest has room, a Bucketed Liquid will be outputted to the Hop.  
+* **Dispense Mode**: If there is no container below or in front of the Bucketer, but there is Air or Water in front of the Bucketer, it will be in Dispense Mode and will spawn the Bucketed Liquid into the space in front of it. It will not dispense the Bucketed Liquid into Lava (although maybe it should).
 
 ## Usage
 
