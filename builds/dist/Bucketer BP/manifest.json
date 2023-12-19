@@ -1,0 +1,51 @@
+{
+	"format_version": 2,
+	"metadata": {
+		"authors": [
+			"Leonardo1123"
+		]
+	},
+	"header": {
+		"name": "Bucketer",
+		"description": "The Bucketer block can be placed under a cauldron to collect the liquid as bucketed items (when provided buckets).",
+		"min_engine_version": [
+			1,
+			20,
+			40
+		],
+		"uuid": "e0d1d3fc-15cd-4986-be20-1e8a17e8deee",
+		"version": [
+			1,
+			0,
+			5
+		]
+	},
+	"modules": [
+		{
+			"type": "data",
+			"uuid": "c1931988-3e04-401a-9ea0-a38cc8d50602",
+			"version": [
+				1,
+				0,
+				5
+			]
+		},
+		{
+			"type": "script",
+			"language": "javascript",
+			"uuid": "a2a3c6ad-2d7b-4468-91cd-74a36a7ae9b9",
+			"entry": "scripts/main.js",
+			"version": [
+				1,
+				0,
+				5
+			]
+		}
+	],
+	"dependencies": [
+		{
+			"module_name": "@minecraft/server",
+			"version": "1.8.0-beta"
+		}
+	]
+}

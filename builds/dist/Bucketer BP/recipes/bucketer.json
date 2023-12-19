@@ -1,0 +1,36 @@
+{
+	"format_version": "1.12",
+	"minecraft:recipe_shaped": {
+		"description": {
+			"identifier": "fibdev:bucketer"
+		},
+		"tags": [
+			"crafting_table"
+		],
+		"key": {
+			"S": {
+				"item": "minecraft:stone"
+			},
+			"B": {
+				"item": "minecraft:bucket"
+			},
+			"T": {
+				"item": "minecraft:redstone_torch"
+			},
+			"C": {
+				"item": "minecraft:comparator"
+			},
+			"D": {
+				"item": "minecraft:dropper"
+			}
+		},
+		"pattern": [
+			"SBS",
+			"TCT",
+			"SDS"
+		],
+		"result": {
+			"item": "fibdev:bucketer"
+		}
+	}
+}
