@@ -8,7 +8,12 @@
 	},
 	"regolith": {
 		"dataPath": "./packs/data",
-		"filterDefinitions": {},
+		"filterDefinitions": {
+			"export": {
+				"url": "github.com/cda94581/regolith-filters",
+				"version": "0.0.4"
+			}
+		},
 		"profiles": {
 			"default": {
 				"export": {
