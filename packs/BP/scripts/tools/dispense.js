@@ -1,10 +1,9 @@
 import { ItemStack } from "@minecraft/server";
+import { getCardDir } from "./utility.js";
 
 class Dispense {
   static dispenseBucket = (bucketer, bucketName) => {
-    const facingDir = bucketer.permutation.getState(
-      "minecraft:cardinal_direction"
-    );
+    const facingDir = getCardDir(bucketer);
     const location = bucketer[facingDir]().location;
 
     location.x += 0.5;
@@ -16,9 +15,7 @@ class Dispense {
   };
 
   static canDispense = bucketer => {
-    const facingDir = bucketer.permutation.getState(
-      "minecraft:cardinal_direction"
-    );
+    const facingDir = getCardDir(bucketer);
     const frontSpace = bucketer[facingDir]();
 
     return (

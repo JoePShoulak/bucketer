@@ -20,7 +20,13 @@
 					"readOnly": false,
 					"target": "development"
 				},
-				"filters": []
+				"filters": [{
+					"filter": "export",
+					"settings": {
+						"output": "builds/Bucketer.mcaddon"
+					}
+				}
+				]
 			}
 		}
 	}

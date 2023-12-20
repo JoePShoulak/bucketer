@@ -1,4 +1,5 @@
 import { ItemStack } from "@minecraft/server";
+import { getCardDir } from "./utility.js";
 
 const facingDirectionKey = ["down", null, "north", "south", "west", "east"];
 const reverseDirDict = {
@@ -34,9 +35,7 @@ class Container {
   };
 
   static getHopperWithBuckets = bucketer => {
-    const facingDir = bucketer.permutation.getState(
-      "minecraft:cardinal_direction"
-    );
+    const facingDir = getCardDir(bucketer);
 
     for (let dir of ["north", "east", "south", "west"]) {
       if (dir === facingDir) continue;
@@ -45,12 +44,11 @@ class Container {
 
       if (hopper == undefined) return null;
 
-      if (
-        hopper.typeId === "minecraft:hopper" &&
-        Container.facingInward(hopper, dir) &&
-        Container.hasBuckets(hopper)
-      )
-        return hopper;
+      const isHopper = hopper.typeId === "minecraft:hopper";
+      const facingInwards = Container.facingInward(hopper, dir);
+      const hasBuckets = Container.hasBuckets(hopper);
+
+      if (isHopper && facingInwards && hasBuckets) return hopper;
     }
 
     return null;
@@ -63,9 +61,7 @@ class Container {
   };
 
   static getFrontBox = bucketer => {
-    const facingDir = bucketer.permutation.getState(
-      "minecraft:cardinal_direction"
-    );
+    const facingDir = getCardDir(bucketer);
     const container = bucketer[facingDir]();
 
     return container.getComponent("inventory") ? container : null;
