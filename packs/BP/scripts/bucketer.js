@@ -14,8 +14,7 @@ const bucket = bucketer => {
 
   if (mode === "dispense") return Dispense.dispenseBucket(bucketer, bucketName);
   if (mode === "furnace") return Furnace.addBucket(outBox, bucketName);
-  if (mode === "chest" || mode === "hopper")
-    return Container.addBucket(outBox, bucketName);
+  if (mode === "chest") return Container.addBucket(outBox, bucketName); // Also Hopper Mode
 };
 
 const getState = bucketer => {
@@ -32,11 +31,9 @@ const getState = bucketer => {
   // Hopper Mode
   const outHop = Container.getOutputHopper(bucketer);
   if (outHop) {
-    if (Container.hasFreeSlot(outHop)) {
-      return { ...state, mode: "hopper", outBox: outHop };
-    } else {
-      return fail;
-    }
+    return Container.hasFreeSlot(outHop)
+      ? { ...state, mode: "chest", outBox: outHop }
+      : fail;
   }
 
   // Dispense Mode
