@@ -26,6 +26,8 @@ Note: You can also place a chest in front instead of a hopper below, and if you 
 
 Two sets of checks must pass for the Bucketer to produce a Bucketed Liquid. If a Bucketer can not produce an output it will never take an input. It is therefore impossible (at least, it should be) to lose resources with the Bucketer.
 
+These checks happen once every 5 in-game ticks. 
+
 ### Input Rules
 
 * **Liquid**: There must be a Cauldron immediately above the Bucketer which is full (fill_level of 6)
