@@ -8,10 +8,10 @@ The Bucketer is a custom block that will remove the liquid from a full Cauldron 
 
 The Bucketer requires:
 
-4x Smooth Stone
-2x Redstone Torch
-1x Dropper
-1x Comparator
+4x Smooth Stone  
+2x Redstone Torch  
+1x Dropper  
+1x Comparator  
 1x Bucket
 
 ## Tl;dr
