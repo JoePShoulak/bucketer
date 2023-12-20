@@ -2,8 +2,9 @@ import { ItemStack } from "@minecraft/server";
 import { getCardDir } from "./utility.js";
 
 const facingDirectionKey = ["down", null, "north", "south", "west", "east"];
+const chestNames = ["chest", "hopper", "shulker_box", "barrel"];
+const cardDirs = ["north", "east", "south", "west"];
 const reverseDirDict = {
-  down: "above",
   north: "south",
   south: "north",
   east: "west",
@@ -26,18 +27,13 @@ class Container {
 
     const blockName = typeId.split(":")[1];
 
-    return (
-      blockName === "chest" ||
-      blockName === "hopper" ||
-      blockName === "shulker_box" ||
-      blockName === "barrel"
-    );
+    return chestNames.includes(blockName);
   };
 
   static getHopperWithBuckets = bucketer => {
     const facingDir = getCardDir(bucketer);
 
-    for (let dir of ["north", "east", "south", "west"]) {
+    for (let dir of cardDirs) {
       if (dir === facingDir) continue;
 
       const hopper = bucketer[dir]();
