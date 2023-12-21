@@ -12,7 +12,7 @@ const reverseDirDict = {
 };
 
 class Container {
-  static getInv = box => box.getComponent("inventory").container;
+  static getInv = box => box.getComponent("inventory")?.container;
 
   static facingInward = (block, dir) => {
     const facingDirNum = block.permutation.getState("facing_direction");
@@ -65,6 +65,7 @@ class Container {
 
   static hasBuckets = box => {
     const inv = Container.getInv(box);
+    if (!inv) return false;
 
     for (let i = 0; i < inv.size; i++) {
       const item = inv.getItem(i);
