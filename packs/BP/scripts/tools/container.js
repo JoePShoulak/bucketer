@@ -1,4 +1,5 @@
 import { ItemStack } from "@minecraft/server";
+
 import { getCardDir } from "./utility.js";
 
 const facingDirectionKey = ["down", null, "north", "south", "west", "east"];
@@ -28,6 +29,14 @@ class Container {
     const blockName = typeId.split(":")[1];
 
     return chestNames.includes(blockName);
+  };
+
+  static isFurnace = ({ typeId }) => {
+    if (typeId == undefined) return false;
+
+    const blockName = typeId.split(":")[1];
+
+    return blockName.includes("furnace") || blockName.includes("smoker");
   };
 
   static getHopperWithBuckets = bucketer => {

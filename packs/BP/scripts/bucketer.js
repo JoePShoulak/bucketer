@@ -1,8 +1,8 @@
+import { world } from "@minecraft/server";
+
 import { Container } from "./tools/container.js";
 import { Dispense } from "./tools/dispense.js";
 import { Cauldron } from "./tools/cauldron.js";
-import { Furnace } from "./tools/furnace.js";
-import { Sound } from "./tools/sound.js";
 
 const bucket = bucketer => {
   const { cauldron, inHop, outBox, bucketName, mode } = getState(bucketer);
@@ -10,10 +10,10 @@ const bucket = bucketer => {
 
   Container.takeBucket(inHop);
   Cauldron.takeLiquid(cauldron);
-  Sound.makeBucketingSound(bucketName, bucketer);
+  makeBucketingSound(bucketName, bucketer);
 
   if (mode === "dispense") return Dispense.dispenseBucket(bucketer, bucketName);
-  if (mode === "furnace") return Furnace.addBucket(outBox, bucketName);
+  if (mode === "furnace") return Container.addBucket(outBox, bucketName, 1);
   if (mode === "chest") return Container.addBucket(outBox, bucketName); // Also Hopper Mode
 };
 
@@ -46,13 +46,21 @@ const getState = bucketer => {
       : fail;
 
   // Furnace Mode
-  if (Furnace.isFurnace(frontBox))
-    return state.bucketName.includes("lava") && Furnace.hasFreeSlot(frontBox)
+  if (Container.isFurnace(frontBox))
+    return state.bucketName.includes("lava") &&
+      Container.hasFreeSlot(frontBox, 1)
       ? { ...state, mode: "furnace", outBox: frontBox }
       : fail;
 
   console.warn("If this ever shows up, I wanna know why");
   return fail;
+};
+
+const makeBucketingSound = (itemName, { location }) => {
+  const liquid = itemName.split(":")[1].split("_")[0];
+  const sound = `bucket.fill_${liquid}`;
+
+  world.playSound(sound, location);
 };
 
 export { bucket };
